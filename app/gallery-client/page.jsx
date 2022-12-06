@@ -11,7 +11,7 @@ export default function Gallery() {
       return data;
     }
   );
-  if (isLoading) return <h1>Loading...</h1>;
+  // if (isLoading) return <h1>Loading...k</h1>;
   return (
     <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg-px-8">
       <h2 className="mb-8 text-2xl font-semibold">Gallery - client</h2>

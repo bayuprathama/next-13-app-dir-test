@@ -4,7 +4,8 @@ import Sidebar from './sidebar';
 import ReactQueryWrapper from './ReactQueryWrapper';
 import './globals.css';
 import { Inter } from '@next/font/google';
-
+import { Suspense } from 'react';
+import Loading from './loading';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -23,9 +24,11 @@ export default function RootLayout({ children }) {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="w-full py-8 pl-16 ">
-            <ReactQueryWrapper>{children}</ReactQueryWrapper>
-          </main>
+          <Suspense fallback={<Loading />}>
+            <ReactQueryWrapper>
+              <main className="w-full py-8 pl-16 ">{children}</main>
+            </ReactQueryWrapper>
+          </Suspense>
         </div>
         <Footer />
       </body>

@@ -18,7 +18,7 @@ export default function Todos() {
       .get('https://jsonplaceholder.typicode.com/todos')
       .then((res) => res.data)
   );
-  if (isLoading) return <h1>Loading...</h1>;
+  // if (isLoading) return <h1>Loading...</h1>;
   return (
     <div className="max-w-xl">
       <h2 className="mb-8 text-2xl font-semibold">Todos - client</h2>
